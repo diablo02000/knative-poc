@@ -1,0 +1,16 @@
+specVersion: 0.35.0
+name: image-size
+runtime: python
+created: 2024-02-23T12:49:54.411912083+01:00
+build:
+  builderImages:
+    pack: diablo02000/buildpack:python3-ffmpeg
+  buildEnvs:
+    - name: BP_CPYTHON_VERSION
+      value: '3.10.*'
+    - name: BP_LOG_LEVEL
+      value: 'debug'
+run:
+  envs:
+  - name: APP_MODULE
+    value: func:app
